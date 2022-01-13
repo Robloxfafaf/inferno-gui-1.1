@@ -16,23 +16,24 @@ local PrisonLife = Instance.new("TextButton")
 local troll = Instance.new("TextButton")
 local ezhub = Instance.new("TextButton")
 local name = Instance.new("TextBox")
- 
+local infiniteyield = Instance.new("TextButton")
+
 loginframe.Draggable = true
 loginframe.Selectable = true
 loginframe.Active = true
- 
+
 haxgui.Name = "haxgui"
 haxgui.Parent = player.PlayerGui
- 
+
 loginframe.Name = "loginframe"
 loginframe.Parent = haxgui
 loginframe.BorderSizePixel = 0
 loginframe.BackgroundColor3 = Color3.new(0.223529, 0.223529, 0.223529)
 loginframe.Position = UDim2.new(0.054, 0, 0.074, 0)
 loginframe.Size = UDim2.new(0, 392, 0, 243)
- 
+
 UICorner_1.Parent = loginframe
- 
+
 Button.Name = "button"
 Button.Parent = loginframe
 Button.Position = UDim2.new(0.918, 0, 0)
@@ -44,7 +45,7 @@ Button.TextSize = 14
 Button.MouseButton1Down:connect(function()
 	haxgui:remove()
 end)
- 
+
 Speed1.Name = "speed1"
 Speed1.Parent = loginframe
 Speed1.BorderSizePixel = 1
@@ -53,9 +54,9 @@ Speed1.Position = UDim2.new(0.12, 0, 0.029, 0)
 Speed1.Size = UDim2.new(0, 49, 0, 35)
 Speed1.TextWrapped = true
 Speed1.Text = "Speed default"
- 
+
 UICorner_2.Parent = Speed1
- 
+
 Speed2.Name = "speed2"
 Speed2.Parent = loginframe
 Speed2.BorderSizePixel = 1
@@ -64,9 +65,9 @@ Speed2.Position = UDim2.new(0.365, 0, 0.029, 0)
 Speed2.Size = UDim2.new(0, 49, 0, 35)
 Speed2.TextWrapped = true
 Speed2.Text="Speed Fast"
- 
+
 UICorner_3.Parent = Speed2
- 
+
 Speed3.Name = "speed3"
 Speed3.Parent = loginframe
 Speed3.BorderSizePixel = 1
@@ -75,9 +76,9 @@ Speed3.Position = UDim2.new(0.61, 0, 0.029, 0)
 Speed3.Size = UDim2.new(0, 49, 0, 35)
 Speed3.TextWrapped = true
 Speed3.Text="Speed mega fast"
- 
+
 UICorner_4.Parent = Speed3
- 
+
 PrisonLife.Name = "Prison Life"
 PrisonLife.Parent = loginframe
 PrisonLife.BorderSizePixel = 1
@@ -86,9 +87,20 @@ PrisonLife.Position = UDim2.new(0.122, 0, 0.251, 0)
 PrisonLife.Size = UDim2.new(0, 49, 0, 35)
 PrisonLife.TextWrapped = true
 PrisonLife.Text="Prison Life"
- 
+
 UICorner_5.Parent = PrisonLife
- 
+
+infiniteyield.Name = "Infinite Yield"
+infiniteyield.Parent = loginframe
+infiniteyield.BorderSizePixel = 1
+infiniteyield.BackgroundColor3 = Color3.new(0.333333, 0.666667, 0)
+infiniteyield.Position = UDim2.new(0.365, 0, 0.247, 0)
+infiniteyield.Size = UDim2.new(0, 49, 0, 35)
+infiniteyield.TextWrapped = true
+infiniteyield.Text = "Infinite Yield"
+
+
+
 ezhub.Name = "Prison Life"
 ezhub.Parent = loginframe
 ezhub.BorderSizePixel = 1
@@ -97,9 +109,9 @@ ezhub.Position = UDim2.new(0.607, 0, 0.251, 0)
 ezhub.Size = UDim2.new(0, 49, 0, 35)
 ezhub.TextWrapped = true
 ezhub.Text= "ezhub" 
- 
+
 UICorner_7.Parent = ezhub
- 
+
 name.Name = "name"
 name.Parent = loginframe
 name.BackgroundTransparency = 1
@@ -110,342 +122,26 @@ name.TextWrapped = true
 name.Text = "Inferno's gui"
 name.Rotation = 270
 name.TextSize = 20
- 
+
 Speed1.MouseButton1Down:connect(function()
 	game.Players.LocalPlayer.Character:findFirstChildOfClass("Humanoid").WalkSpeed = 16
 end)
- 
+
 Speed2.MouseButton1Down:connect(function()
 	game.Players.LocalPlayer.Character:findFirstChildOfClass("Humanoid").WalkSpeed = 50
 end)
- 
+
 Speed3.MouseButton1Down:connect(function()
 	game.Players.LocalPlayer.Character:findFirstChildOfClass("Humanoid").WalkSpeed = 100
 end)
- 
+
 PrisonLife.MouseButton1Down:connect(function()
-	local p = game.Players.LocalPlayer
-	local gui = Instance.new('ScreenGui',p.PlayerGui)
-	local frame = Instance.new('ScrollingFrame',gui)
-	local open = Instance.new('TextButton',gui)
-	local name = Instance.new('TextLabel',frame)
-	local arrest = Instance.new('TextButton',frame)
-	local btools = Instance.new('TextButton',frame)
-	local escape = Instance.new('TextButton',frame)
-	local exit = Instance.new('TextButton',frame)
-	local killaura = Instance.new('TextButton',frame)
-	local melee = Instance.new('TextButton',frame)
-	local removedoors = Instance.new('TextButton',frame)
-	local tools = Instance.new('TextButton',frame)
-	local speedplus = Instance.new('TextButton',frame)
-	local speedminus = Instance.new('TextButton',frame)
-	local jumpplus = Instance.new('TextButton',frame)
-	local jumpminus = Instance.new('TextButton',frame)
-	local bypass = Instance.new('TextButton',frame)
-	local db = Instance.new('TextButton',frame)
-	local floor = Instance.new('TextButton',frame)
-	local creator = Instance.new('TextButton',frame)
-	local prison = Instance.new('TextButton',frame)
-	local Neutral = Instance.new('TextButton',frame)
-	gui.Name = "Prison Life v2.0.2 Script/GUI Made by OGMGuy on Roblox."
-	frame.Name = "Commands"
-	open.Name = "Open"
-	name.Name = "Name"
-	arrest.Name = "ArrestButton"
-	btools.Name = "BtoolsButton"
-	escape.Name = "EscapeButton"
-	exit.Name = "ExitButton"
-	killaura.Name = "KillauraButton"
-	melee.Name = "MeleeButton"
-	removedoors.Name = "RemoveDoorsButton"
-	tools.Name = "ToolsButton"
-	speedplus.Name = "SpeedAdd"
-	speedminus.Name = "SpeedReduce"
-	jumpplus.Name = "JumpAdd"
-	jumpminus.Name = "JumpReduce"
-	bypass.Name = "Bypass"
-	db.Name = "DisableBypass"
-	floor.Name = "Floor"
-	creator.Name = "CreatorName"
-	prison.Name = "TPtoprison"
-	Neutral.Name = "Neutral Team Switch"
-	frame.Visible = true
-	open.Visible = false
-	name.Visible = true
-	arrest.Visible = true
-	btools.Visible = true
-	escape.Visible = true
-	exit.Visible = true
-	killaura.Visible = true
-	melee.Visible = true
-	removedoors.Visible = true
-	tools.Visible = true
-	speedplus.Visible = true
-	speedminus.Visible = true
-	jumpplus.Visible = true
-	jumpminus.Visible = true
-	bypass.Visible = true
-	db.Visible = true
-	floor.Visible = true
-	creator.Visible = true
-	prison.Visible = true
-	Neutral.Visible = true
-	frame.BackgroundColor3 = Color3.new(255,255,255)
-	open.BackgroundColor3 = Color3.new(105,105,105)
-	name.BackgroundColor3 = Color3.new(255,255,255)
-	arrest.BackgroundColor3 = Color3.new(255,255,255)
-	btools.BackgroundColor3 = Color3.new(255,255,255)
-	escape.BackgroundColor3 = Color3.new(255,255,255)
-	exit.BackgroundColor3 = Color3.new(255,0,0)
-	killaura.BackgroundColor3 = Color3.new(255,255,255)
-	melee.BackgroundColor3 = Color3.new(255,255,255)
-	removedoors.BackgroundColor3 = Color3.new(255,255,255)
-	tools.BackgroundColor3 = Color3.new(255,255,255)
-	speedplus.BackgroundColor3 = Color3.new(255,255,255)
-	speedminus.BackgroundColor3 = Color3.new(255,255,255)
-	jumpplus.BackgroundColor3 = Color3.new(255,255,255)
-	jumpminus.BackgroundColor3 = Color3.new(255,255,255)
-	bypass.BackgroundColor3 = Color3.new(255,255,255)
-	db.BackgroundColor3 = Color3.new(255,255,255)
-	floor.BackgroundColor3 = Color3.new(255,255,255)
-	creator.BackgroundColor3 = Color3.new(169,169,169)
-	prison.BackgroundColor3 = Color3.new(255,255,255)
-	Neutral.BackgroundColor3 = Color3.new(255,255,255)
-	frame.BackgroundTransparency = 0.7
-	open.BackgroundTransparency = 0.5
-	name.BackgroundTransparency = 0.6
-	arrest.BackgroundTransparency = 0
-	btools.BackgroundTransparency = 0
-	escape.BackgroundTransparency = 0
-	exit.BackgroundTransparency = 0
-	killaura.BackgroundTransparency = 0
-	melee.BackgroundTransparency = 0
-	removedoors.BackgroundTransparency = 0
-	tools.BackgroundTransparency = 0
-	speedplus.BackgroundTransparency = 0
-	speedminus.BackgroundTransparency = 0
-	jumpplus.BackgroundTransparency = 0
-	jumpminus.BackgroundTransparency = 0
-	bypass.BackgroundTransparency = 0
-	db.BackgroundTransparency = 0
-	floor.BackgroundTransparency = 0
-	creator.BackgroundTransparency = 0
-	prison.BackgroundTransparency = 0
-	Neutral.BackgroundTransparency = 0
-	frame.Size = UDim2.new(0,250,0,350)
-	open.Size = UDim2.new(0,60,0,25)
-	name.Size = UDim2.new(0,180,0,40)
-	arrest.Size = UDim2.new(0.9,12,0,30)
-	btools.Size = UDim2.new(0.9,12,0,30)
-	escape.Size = UDim2.new(0.9,12,0,30)
-	exit.Size = UDim2.new(0,50,0,40)
-	killaura.Size = UDim2.new(0.9,12,0,30)
-	melee.Size = UDim2.new(0.9,12,0,30)
-	removedoors.Size = UDim2.new(0.9,12,0,30)
-	tools.Size = UDim2.new(0.9,12,0,30)
-	speedplus.Size = UDim2.new(0.9,12,0,30)
-	speedminus.Size = UDim2.new(0.9,12,0,30)
-	jumpplus.Size = UDim2.new(0.9,12,0,30)
-	jumpminus.Size = UDim2.new(0.9,12,0,30)
-	bypass.Size = UDim2.new(0.9,12,0,30)
-	db.Size = UDim2.new(0.9,12,0,30)
-	floor.Size = UDim2.new(0.9,12,0,30)
-	creator.Size = UDim2.new(0.9,12,0,30)
-	prison.Size = UDim2.new(0.9,12,0,30)
-	Neutral.Size = UDim2.new(0.9,12,0,30)
-	frame.Position = UDim2.new(0,5,0.4,0)
-	open.Position = UDim2.new(0,0,0,0)
-	name.Position = UDim2.new(0,0,0,0)
-	arrest.Position = UDim2.new(0,0,0,320)
-	btools.Position = UDim2.new(0,0,0,185)
-	escape.Position = UDim2.new(0,0,0,230)
-	exit.Position = UDim2.new(0,184,0,0)
-	killaura.Position = UDim2.new(0,0,0,275)
-	melee.Position = UDim2.new(0,0,0,140)
-	removedoors.Position = UDim2.new(0,0,0,50)
-	tools.Position = UDim2.new(0,0,0,95)
-	speedplus.Position = UDim2.new(0,0,0,365)
-	speedminus.Position = UDim2.new(0,0,0,410)
-	jumpplus.Position = UDim2.new(0,0,0,455)
-	jumpminus.Position = UDim2.new(0,0,0,500)
-	bypass.Position = UDim2.new(0,0,0,545)
-	db.Position = UDim2.new(0,0,0,590)
-	floor.Position = UDim2.new(0,0,0,635)
-	prison.Position = UDim2.new(0,0,0,680)
-	Neutral.Position = UDim2.new(0,0,0,725)
-	creator.Position = UDim2.new(0,0,0,770)
-	open.TextColor3 = Color3.new(0,0,0)
-	name.TextColor3 = Color3.new(0,0,0)
-	arrest.TextColor3 = Color3.new(0,0,0)
-	btools.TextColor3 = Color3.new(0,0,0)
-	escape.TextColor3 = Color3.new(0,0,0)
-	exit.TextColor3 = Color3.new(0,0,0)
-	killaura.TextColor3 = Color3.new(0,0,0)
-	melee.TextColor3 = Color3.new(0,0,0)
-	removedoors.TextColor3 = Color3.new(0,0,0)
-	tools.TextColor3 = Color3.new(0,0,0)
-	speedplus.TextColor3 = Color3.new(0,0,0)
-	speedminus.TextColor3 = Color3.new(0,0,0)
-	jumpplus.TextColor3 = Color3.new(0,0,0)
-	jumpminus.TextColor3 = Color3.new(0,0,0)
-	bypass.TextColor3 = Color3.new(0,0,0)
-	db.TextColor3 = Color3.new(0,0,0)
-	floor.TextColor3 = Color3.new(0,0,0)
-	creator.TextColor3 = Color3.new(0,0,0)
-	prison.TextColor3 = Color3.new(0,0,0)
-	Neutral.TextColor3 = Color3.new(0,0,0)
-	name.Font = 'SciFi'
-	open.Text = 'Open'
-	name.Text = 'Prison Life v2.0 Commands Remastered. Discord: #1890'
-	arrest.Text = 'Click to Arrest'
-	btools.Text = 'Give Btools'
-	escape.Text = 'Escape The Prison'
-	exit.Text = 'Exit'
-	killaura.Text = 'Instant Kill Aura[Danger]'
-	melee.Text = 'Give Melee'
-	removedoors.Text = 'Remove Doors'
-	tools.Text = 'Give Guns'
-	speedplus.Text = 'WalkSpeed + 10'
-	speedminus.Text = 'WalkSpeed - 10'
-	jumpplus.Text = 'JumpPower + 10'
-	jumpminus.Text = 'JumpPower - 10'
-	bypass.Text = 'Enable Bypass[Cannot Punch]'
-	db.Text = 'Disable Bypass'
-	floor.Text = 'Get Tools on the floor'
-	creator.Text = 'Made by OGMGuy from roblox. Discord: #1890'
-	prison.Text = 'Teleport to prison'
-	Neutral.Text = 'Neutral Team Switch'
-	open.TextScaled = true
-	name.TextScaled = true
-	arrest.TextScaled = true
-	btools.TextScaled = true
-	escape.TextScaled = true
-	exit.TextScaled = true
-	killaura.TextScaled = true
-	melee.TextScaled = true
-	removedoors.TextScaled = true
-	tools.TextScaled = true
-	speedplus.TextScaled = true
-	speedminus.TextScaled = true
-	jumpplus.TextScaled = true
-	jumpminus.TextScaled = true
-	bypass.TextScaled = true
-	db.TextScaled = true
-	floor.TextScaled = true
-	creator.TextScaled = true
-	prison.TextScaled = true
-	Neutral.TextScaled = true
-	frame.Active = true
-	frame.Draggable = true
-	open.MouseButton1Down:connect(function()
-		frame.Visible = true
-		frame:TweenPosition(UDim2.new(0,5,0.4,0), "Out", "Bounce",1 ,true)
-		open.Visible = false
-		open.Position = UDim2.new(0,0,0,0)
-	end)
-	exit.MouseButton1Down:connect(function()
-		frame:TweenPosition(UDim2.new(0.1,-400,0.4,0) , "Out", "Quad", 1, true)
-		wait(1)
-		frame.Visible = false
-		wait(.1)
-		open.Visible = true 
-		open:TweenPosition(UDim2.new(0,2,0.8,15), "Out", "Bounce",1 ,true)
-	end)
-	btools.MouseButton1Down:connect(function()
-		Instance.new('HopperBin', game.Players.LocalPlayer.Backpack).BinType = 2
-		Instance.new('HopperBin', game.Players.LocalPlayer.Backpack).BinType = 3
-		Instance.new('HopperBin', game.Players.LocalPlayer.Backpack).BinType = 4
-		loadstring(game:GetObjects('rbxassetid://552440069')[1].Source)()
-	end)
-	removedoors.MouseButton1Down:connect(function()
-		game.Workspace.Doors:Destroy()
-	end) 
-	tools.MouseButton1Down:connect(function()
-		local weapons = {"Remington 870", "M9", "AK-47", "M4A1", "Riot Shield"}
-		for i, v in pairs(game.Workspace["Prison_ITEMS"].giver:GetChildren()) do
-			for j, k in pairs(weapons) do
-				if v.Name == k then
-					v:MoveTo(game.Players.LocalPlayer.Character.Torso.Position)
-				end
-			end
-		end
-	end)
-	melee.MouseButton1Down:connect(function()
-		local weapons = {"Crude Knife", "Sharpened stick", "Extendo mirror"}
-		for i, v in pairs(game.ReplicatedStorage.Tools:GetChildren()) do
-			for j, k in pairs(weapons) do
-				if v.Name == k then
-					v:Clone().Parent = game.Players.LocalPlayer.Backpack
-				end
-			end
-		end
-	end)
-	escape.MouseButton1Down:connect(function()
-		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(283, 72, 2213)
-	end)
-	killaura.MouseButton1Down:connect(function()
-		while wait(0.1) do
-			for i, plr in pairs(game.Players:GetChildren()) do
-				if plr.Name ~= game.Players.LocalPlayer.Name then
-					for i = 1, 10 do
-						game.ReplicatedStorage.meleeEvent:FireServer(plr)
-					end
-				end
-			end
-		end
-	end)
-	local mouse = game.Players.LocalPlayer:GetMouse()
-	local arrestEvent = game.Workspace.Remote.arrest
-	mouse.Button1Down:connect(function()
-		local obj = mouse.Target
-		local response = arrestEvent:InvokeServer(obj)
-	end)
-	speedplus.MouseButton1Down:connect(function()
-		p.Character.Humanoid.WalkSpeed = p.Character.Humanoid.WalkSpeed + 10
-	end)
-	speedminus.MouseButton1Down:connect(function()
-		p.Character.Humanoid.WalkSpeed = p.Character.Humanoid.WalkSpeed - 10
-	end)
-	jumpplus.MouseButton1Down:connect(function()
-		p.Character.Humanoid.JumpPower = p.Character.Humanoid.JumpPower + 10
-	end)
-	jumpminus.MouseButton1Down:connect(function()
-		p.Character.Humanoid.JumpPower = p.Character.Humanoid.JumpPower - 10
-	end)
-	bypass.MouseButton1Down:connect(function()
-		game.Players.LocalPlayer.Character.ClientInputHandler.Disabled = true
-		game.Players.LocalPlayer.CharacterAdded:connect(function()
-			game.Workspace:WaitForChild(game.Players.LocalPlayer.Name)
-			game.Players.LocalPlayer.Character.ClientInputHandler.Disabled = true
-		end)
-		local message = Instance.new("Message",game.Workspace)
-		message.Text = 'By OGMGuy on Roblox. Discord: #1890'
-		wait(2)
-		message:Destroy() 
-	end)
-	db.MouseButton1Down:connect(function()
-		game.Players.LocalPlayer.Character.ClientInputHandler.Disabled = false
-		game.Players.LocalPlayer.CharacterAdded:connect(function()
-			game.Workspace:WaitForChild(game.Players.LocalPlayer.Name)
-			game.Players.LocalPlayer.Character.ClientInputHandler.Disabled = false
-		end)
-	end)
-	floor.MouseButton1Down:connect(function()
-		for i, v in pairs(game.Workspace["Prison_ITEMS"].single:GetChildren()) do
-			v:MoveTo(game.Players.LocalPlayer.Character.Torso.Position)
-		end
-	end)
-	prison.MouseButton1Down:connect(function()
-		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(900, 97, 2400)
-	end)
-	Neutral.MouseButton1Down:connect(function()
-		Workspace.Remote.TeamEvent:FireServer("Medium stone grey")
-	end)
+	loadstring(game:HttpGet(('https://raw.githubusercontent.com/AviansEpic/prisonlifehub/main/main.lua'),true))()
 end)
- 
+
 ezhub.MouseButton1Down:connect(function()
 	-- Instances:
- 
+
 	local EzLauncher = {
 		EzLauncher = Instance.new("ScreenGui"),
 		Frame = Instance.new("Frame"),
@@ -500,42 +196,42 @@ ezhub.MouseButton1Down:connect(function()
 		NewsLabel = Instance.new("TextLabel"),
 		UIPadding_2 = Instance.new("UIPadding"),
 	}
- 
+
 	--Properties:
- 
+
 	EzLauncher.EzLauncher.Name = "EzLauncher"
 	EzLauncher.EzLauncher.Parent = game.CoreGui
 	EzLauncher.EzLauncher.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
- 
+
 	EzLauncher.Frame.Parent = EzLauncher.EzLauncher
 	EzLauncher.Frame.AnchorPoint = Vector2.new(0.5, 0.5)
 	EzLauncher.Frame.BackgroundColor3 = Color3.fromRGB(41, 53, 68)
 	EzLauncher.Frame.Position = UDim2.new(0.5, 0, 0.5, 0)
 	EzLauncher.Frame.Size = UDim2.new(0, 350, 0, 400)
- 
+
 	EzLauncher.StatusSection.Name = "StatusSection"
 	EzLauncher.StatusSection.Parent = EzLauncher.Frame
 	EzLauncher.StatusSection.AnchorPoint = Vector2.new(0.5, 0)
 	EzLauncher.StatusSection.BackgroundColor3 = Color3.fromRGB(35, 47, 62)
 	EzLauncher.StatusSection.BorderSizePixel = 0
 	EzLauncher.StatusSection.Size = UDim2.new(1, -20, 0, 100)
- 
+
 	EzLauncher.SectionTopBar.Name = "SectionTopBar"
 	EzLauncher.SectionTopBar.Parent = EzLauncher.StatusSection
- 
+
 	EzLauncher.Frame_2.Parent = EzLauncher.SectionTopBar
 	EzLauncher.Frame_2.BackgroundColor3 = Color3.fromRGB(18, 98, 159)
 	EzLauncher.Frame_2.Size = UDim2.new(0, 2, 0, 32)
- 
+
 	EzLauncher.UICorner.Parent = EzLauncher.Frame_2
- 
+
 	EzLauncher.Frame_3.Parent = EzLauncher.SectionTopBar
 	EzLauncher.Frame_3.BackgroundColor3 = Color3.fromRGB(112, 112, 112)
 	EzLauncher.Frame_3.BackgroundTransparency = 0.750
 	EzLauncher.Frame_3.BorderSizePixel = 0
 	EzLauncher.Frame_3.Position = UDim2.new(0, 0, 0, 32)
 	EzLauncher.Frame_3.Size = UDim2.new(1, 0, 0, 1)
- 
+
 	EzLauncher.TextLabel.Parent = EzLauncher.SectionTopBar
 	EzLauncher.TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 	EzLauncher.TextLabel.BackgroundTransparency = 1.000
@@ -546,10 +242,10 @@ ezhub.MouseButton1Down:connect(function()
 	EzLauncher.TextLabel.TextColor3 = Color3.fromRGB(211, 216, 226)
 	EzLauncher.TextLabel.TextSize = 14.000
 	EzLauncher.TextLabel.TextXAlignment = Enum.TextXAlignment.Left
- 
+
 	EzLauncher.UICorner_2.CornerRadius = UDim.new(0, 4)
 	EzLauncher.UICorner_2.Parent = EzLauncher.StatusSection
- 
+
 	EzLauncher.ContentFrame.Name = "ContentFrame"
 	EzLauncher.ContentFrame.Parent = EzLauncher.StatusSection
 	EzLauncher.ContentFrame.AnchorPoint = Vector2.new(0.5, 1)
@@ -557,7 +253,7 @@ ezhub.MouseButton1Down:connect(function()
 	EzLauncher.ContentFrame.BackgroundTransparency = 1.000
 	EzLauncher.ContentFrame.Position = UDim2.new(0.5, 0, 1, -2)
 	EzLauncher.ContentFrame.Size = UDim2.new(1, -20, 0, 60)
- 
+
 	EzLauncher.EzHubStatusFrame.Name = "EzHubStatusFrame"
 	EzLauncher.EzHubStatusFrame.Parent = EzLauncher.ContentFrame
 	EzLauncher.EzHubStatusFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -565,7 +261,7 @@ ezhub.MouseButton1Down:connect(function()
 	EzLauncher.EzHubStatusFrame.LayoutOrder = 2
 	EzLauncher.EzHubStatusFrame.Position = UDim2.new(0, 10, 0, 38)
 	EzLauncher.EzHubStatusFrame.Size = UDim2.new(0, 60, 0, 60)
- 
+
 	EzLauncher.Status.Name = "Status"
 	EzLauncher.Status.Parent = EzLauncher.EzHubStatusFrame
 	EzLauncher.Status.AnchorPoint = Vector2.new(0.5, 0.5)
@@ -577,7 +273,7 @@ ezhub.MouseButton1Down:connect(function()
 	EzLauncher.Status.Text = "Online"
 	EzLauncher.Status.TextColor3 = Color3.fromRGB(45, 192, 179)
 	EzLauncher.Status.TextSize = 20.000
- 
+
 	EzLauncher.StatusName.Name = "StatusName"
 	EzLauncher.StatusName.Parent = EzLauncher.EzHubStatusFrame
 	EzLauncher.StatusName.AnchorPoint = Vector2.new(0.5, 0.5)
@@ -589,7 +285,7 @@ ezhub.MouseButton1Down:connect(function()
 	EzLauncher.StatusName.Text = "Ez Hub"
 	EzLauncher.StatusName.TextColor3 = Color3.fromRGB(92, 106, 124)
 	EzLauncher.StatusName.TextSize = 14.000
- 
+
 	EzLauncher.EzAPIStatusFrame.Name = "EzAPIStatusFrame"
 	EzLauncher.EzAPIStatusFrame.Parent = EzLauncher.ContentFrame
 	EzLauncher.EzAPIStatusFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -597,7 +293,7 @@ ezhub.MouseButton1Down:connect(function()
 	EzLauncher.EzAPIStatusFrame.LayoutOrder = 3
 	EzLauncher.EzAPIStatusFrame.Position = UDim2.new(0, 80, 0, 38)
 	EzLauncher.EzAPIStatusFrame.Size = UDim2.new(0, 60, 0, 60)
- 
+
 	EzLauncher.Status_2.Name = "Status"
 	EzLauncher.Status_2.Parent = EzLauncher.EzAPIStatusFrame
 	EzLauncher.Status_2.AnchorPoint = Vector2.new(0.5, 0.5)
@@ -609,7 +305,7 @@ ezhub.MouseButton1Down:connect(function()
 	EzLauncher.Status_2.Text = "Online"
 	EzLauncher.Status_2.TextColor3 = Color3.fromRGB(45, 192, 179)
 	EzLauncher.Status_2.TextSize = 20.000
- 
+
 	EzLauncher.StatusName_2.Name = "StatusName"
 	EzLauncher.StatusName_2.Parent = EzLauncher.EzAPIStatusFrame
 	EzLauncher.StatusName_2.AnchorPoint = Vector2.new(0.5, 0.5)
@@ -621,7 +317,7 @@ ezhub.MouseButton1Down:connect(function()
 	EzLauncher.StatusName_2.Text = "Ez API"
 	EzLauncher.StatusName_2.TextColor3 = Color3.fromRGB(92, 106, 124)
 	EzLauncher.StatusName_2.TextSize = 14.000
- 
+
 	EzLauncher.EzLauncherStatusFrame.Name = "EzLauncherStatusFrame"
 	EzLauncher.EzLauncherStatusFrame.Parent = EzLauncher.ContentFrame
 	EzLauncher.EzLauncherStatusFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -629,7 +325,7 @@ ezhub.MouseButton1Down:connect(function()
 	EzLauncher.EzLauncherStatusFrame.LayoutOrder = 1
 	EzLauncher.EzLauncherStatusFrame.Position = UDim2.new(0, 150, 0, 38)
 	EzLauncher.EzLauncherStatusFrame.Size = UDim2.new(0, 60, 0, 60)
- 
+
 	EzLauncher.Status_3.Name = "Status"
 	EzLauncher.Status_3.Parent = EzLauncher.EzLauncherStatusFrame
 	EzLauncher.Status_3.AnchorPoint = Vector2.new(0.5, 0.5)
@@ -641,7 +337,7 @@ ezhub.MouseButton1Down:connect(function()
 	EzLauncher.Status_3.Text = "Online"
 	EzLauncher.Status_3.TextColor3 = Color3.fromRGB(45, 192, 179)
 	EzLauncher.Status_3.TextSize = 20.000
- 
+
 	EzLauncher.StatusName_3.Name = "StatusName"
 	EzLauncher.StatusName_3.Parent = EzLauncher.EzLauncherStatusFrame
 	EzLauncher.StatusName_3.AnchorPoint = Vector2.new(0.5, 0.5)
@@ -653,48 +349,48 @@ ezhub.MouseButton1Down:connect(function()
 	EzLauncher.StatusName_3.Text = "Ez Launcher"
 	EzLauncher.StatusName_3.TextColor3 = Color3.fromRGB(92, 106, 124)
 	EzLauncher.StatusName_3.TextSize = 14.000
- 
+
 	EzLauncher.UIListLayout.Parent = EzLauncher.ContentFrame
 	EzLauncher.UIListLayout.FillDirection = Enum.FillDirection.Horizontal
 	EzLauncher.UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
 	EzLauncher.UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
 	EzLauncher.UIListLayout.Padding = UDim.new(0, 25)
- 
+
 	EzLauncher.UICorner_3.CornerRadius = UDim.new(0, 4)
 	EzLauncher.UICorner_3.Parent = EzLauncher.Frame
- 
+
 	EzLauncher.UIListLayout_2.Parent = EzLauncher.Frame
 	EzLauncher.UIListLayout_2.HorizontalAlignment = Enum.HorizontalAlignment.Center
 	EzLauncher.UIListLayout_2.SortOrder = Enum.SortOrder.LayoutOrder
 	EzLauncher.UIListLayout_2.Padding = UDim.new(0, 5)
- 
+
 	EzLauncher.UIPadding.Parent = EzLauncher.Frame
 	EzLauncher.UIPadding.PaddingBottom = UDim.new(0, 10)
 	EzLauncher.UIPadding.PaddingTop = UDim.new(0, 10)
- 
+
 	EzLauncher.NewsSection.Name = "NewsSection"
 	EzLauncher.NewsSection.Parent = EzLauncher.Frame
 	EzLauncher.NewsSection.AnchorPoint = Vector2.new(0.5, 0)
 	EzLauncher.NewsSection.BackgroundColor3 = Color3.fromRGB(35, 47, 62)
 	EzLauncher.NewsSection.BorderSizePixel = 0
 	EzLauncher.NewsSection.Size = UDim2.new(1, -20, 0, 150)
- 
+
 	EzLauncher.SectionTopBar_2.Name = "SectionTopBar"
 	EzLauncher.SectionTopBar_2.Parent = EzLauncher.NewsSection
- 
+
 	EzLauncher.Frame_4.Parent = EzLauncher.SectionTopBar_2
 	EzLauncher.Frame_4.BackgroundColor3 = Color3.fromRGB(18, 98, 159)
 	EzLauncher.Frame_4.Size = UDim2.new(0, 2, 0, 32)
- 
+
 	EzLauncher.UICorner_4.Parent = EzLauncher.Frame_4
- 
+
 	EzLauncher.Frame_5.Parent = EzLauncher.SectionTopBar_2
 	EzLauncher.Frame_5.BackgroundColor3 = Color3.fromRGB(112, 112, 112)
 	EzLauncher.Frame_5.BackgroundTransparency = 0.750
 	EzLauncher.Frame_5.BorderSizePixel = 0
 	EzLauncher.Frame_5.Position = UDim2.new(0, 0, 0, 32)
 	EzLauncher.Frame_5.Size = UDim2.new(1, 0, 0, 1)
- 
+
 	EzLauncher.TextLabel_2.Parent = EzLauncher.SectionTopBar_2
 	EzLauncher.TextLabel_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 	EzLauncher.TextLabel_2.BackgroundTransparency = 1.000
@@ -705,10 +401,10 @@ ezhub.MouseButton1Down:connect(function()
 	EzLauncher.TextLabel_2.TextColor3 = Color3.fromRGB(211, 216, 226)
 	EzLauncher.TextLabel_2.TextSize = 14.000
 	EzLauncher.TextLabel_2.TextXAlignment = Enum.TextXAlignment.Left
- 
+
 	EzLauncher.UICorner_5.CornerRadius = UDim.new(0, 4)
 	EzLauncher.UICorner_5.Parent = EzLauncher.NewsSection
- 
+
 	EzLauncher.ContentFrame_2.Name = "ContentFrame"
 	EzLauncher.ContentFrame_2.Parent = EzLauncher.NewsSection
 	EzLauncher.ContentFrame_2.Active = true
@@ -720,35 +416,35 @@ ezhub.MouseButton1Down:connect(function()
 	EzLauncher.ContentFrame_2.Size = UDim2.new(1, -20, 0, 100)
 	EzLauncher.ContentFrame_2.CanvasSize = UDim2.new(0, 0, 0, 0)
 	EzLauncher.ContentFrame_2.ScrollBarThickness = 4
- 
+
 	EzLauncher.UIListLayout_3.Parent = EzLauncher.ContentFrame_2
 	EzLauncher.UIListLayout_3.HorizontalAlignment = Enum.HorizontalAlignment.Center
 	EzLauncher.UIListLayout_3.SortOrder = Enum.SortOrder.LayoutOrder
 	EzLauncher.UIListLayout_3.Padding = UDim.new(0, 5)
- 
+
 	EzLauncher.LaunchSection.Name = "LaunchSection"
 	EzLauncher.LaunchSection.Parent = EzLauncher.Frame
 	EzLauncher.LaunchSection.AnchorPoint = Vector2.new(0.5, 0)
 	EzLauncher.LaunchSection.BackgroundColor3 = Color3.fromRGB(35, 47, 62)
 	EzLauncher.LaunchSection.BorderSizePixel = 0
 	EzLauncher.LaunchSection.Size = UDim2.new(1, -20, 0, 120)
- 
+
 	EzLauncher.SectionTopBar_3.Name = "SectionTopBar"
 	EzLauncher.SectionTopBar_3.Parent = EzLauncher.LaunchSection
- 
+
 	EzLauncher.Frame_6.Parent = EzLauncher.SectionTopBar_3
 	EzLauncher.Frame_6.BackgroundColor3 = Color3.fromRGB(18, 98, 159)
 	EzLauncher.Frame_6.Size = UDim2.new(0, 2, 0, 32)
- 
+
 	EzLauncher.UICorner_6.Parent = EzLauncher.Frame_6
- 
+
 	EzLauncher.Frame_7.Parent = EzLauncher.SectionTopBar_3
 	EzLauncher.Frame_7.BackgroundColor3 = Color3.fromRGB(112, 112, 112)
 	EzLauncher.Frame_7.BackgroundTransparency = 0.750
 	EzLauncher.Frame_7.BorderSizePixel = 0
 	EzLauncher.Frame_7.Position = UDim2.new(0, 0, 0, 32)
 	EzLauncher.Frame_7.Size = UDim2.new(1, 0, 0, 1)
- 
+
 	EzLauncher.TextLabel_3.Parent = EzLauncher.SectionTopBar_3
 	EzLauncher.TextLabel_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 	EzLauncher.TextLabel_3.BackgroundTransparency = 1.000
@@ -759,10 +455,10 @@ ezhub.MouseButton1Down:connect(function()
 	EzLauncher.TextLabel_3.TextColor3 = Color3.fromRGB(211, 216, 226)
 	EzLauncher.TextLabel_3.TextSize = 14.000
 	EzLauncher.TextLabel_3.TextXAlignment = Enum.TextXAlignment.Left
- 
+
 	EzLauncher.UICorner_7.CornerRadius = UDim.new(0, 4)
 	EzLauncher.UICorner_7.Parent = EzLauncher.LaunchSection
- 
+
 	EzLauncher.ContentFrame_3.Name = "ContentFrame"
 	EzLauncher.ContentFrame_3.Parent = EzLauncher.LaunchSection
 	EzLauncher.ContentFrame_3.AnchorPoint = Vector2.new(0.5, 1)
@@ -771,17 +467,17 @@ ezhub.MouseButton1Down:connect(function()
 	EzLauncher.ContentFrame_3.BorderColor3 = Color3.fromRGB(27, 42, 53)
 	EzLauncher.ContentFrame_3.Position = UDim2.new(0.5, 0, 1, -8)
 	EzLauncher.ContentFrame_3.Size = UDim2.new(1, -20, 0, 70)
- 
+
 	EzLauncher.ThemeSelectionFrame.Name = "ThemeSelectionFrame"
 	EzLauncher.ThemeSelectionFrame.Parent = EzLauncher.ContentFrame_3
 	EzLauncher.ThemeSelectionFrame.AnchorPoint = Vector2.new(0, 1)
 	EzLauncher.ThemeSelectionFrame.BackgroundColor3 = Color3.fromRGB(41, 84, 178)
 	EzLauncher.ThemeSelectionFrame.Position = UDim2.new(0, 0, 1, -4)
 	EzLauncher.ThemeSelectionFrame.Size = UDim2.new(0, 150, 0, 30)
- 
+
 	EzLauncher.UICorner_8.CornerRadius = UDim.new(0, 4)
 	EzLauncher.UICorner_8.Parent = EzLauncher.ThemeSelectionFrame
- 
+
 	EzLauncher.SelectionLeft.Name = "SelectionLeft"
 	EzLauncher.SelectionLeft.Parent = EzLauncher.ThemeSelectionFrame
 	EzLauncher.SelectionLeft.AnchorPoint = Vector2.new(0, 0.5)
@@ -793,7 +489,7 @@ ezhub.MouseButton1Down:connect(function()
 	EzLauncher.SelectionLeft.Text = "<"
 	EzLauncher.SelectionLeft.TextColor3 = Color3.fromRGB(211, 216, 226)
 	EzLauncher.SelectionLeft.TextSize = 14.000
- 
+
 	EzLauncher.SelectionRight.Name = "SelectionRight"
 	EzLauncher.SelectionRight.Parent = EzLauncher.ThemeSelectionFrame
 	EzLauncher.SelectionRight.AnchorPoint = Vector2.new(1, 0.5)
@@ -805,7 +501,7 @@ ezhub.MouseButton1Down:connect(function()
 	EzLauncher.SelectionRight.Text = ">"
 	EzLauncher.SelectionRight.TextColor3 = Color3.fromRGB(211, 216, 226)
 	EzLauncher.SelectionRight.TextSize = 14.000
- 
+
 	EzLauncher.SelectedLabel.Name = "SelectedLabel"
 	EzLauncher.SelectedLabel.Parent = EzLauncher.ThemeSelectionFrame
 	EzLauncher.SelectedLabel.AnchorPoint = Vector2.new(0.5, 0.5)
@@ -817,7 +513,7 @@ ezhub.MouseButton1Down:connect(function()
 	EzLauncher.SelectedLabel.Text = "Default Theme"
 	EzLauncher.SelectedLabel.TextColor3 = Color3.fromRGB(211, 216, 226)
 	EzLauncher.SelectedLabel.TextSize = 14.000
- 
+
 	EzLauncher.Launch.Name = "Launch"
 	EzLauncher.Launch.Parent = EzLauncher.ContentFrame_3
 	EzLauncher.Launch.BackgroundColor3 = Color3.fromRGB(41, 84, 178)
@@ -826,22 +522,22 @@ ezhub.MouseButton1Down:connect(function()
 	EzLauncher.Launch.Text = "Launch"
 	EzLauncher.Launch.TextColor3 = Color3.fromRGB(211, 216, 226)
 	EzLauncher.Launch.TextSize = 14.000
- 
+
 	EzLauncher.UICorner_9.CornerRadius = UDim.new(0, 4)
 	EzLauncher.UICorner_9.Parent = EzLauncher.Launch
- 
+
 	EzLauncher.Containers.Name = "Containers"
 	EzLauncher.Containers.Parent = EzLauncher.EzLauncher
- 
+
 	EzLauncher.NewsDivider.Name = "NewsDivider"
 	EzLauncher.NewsDivider.Parent = EzLauncher.Containers
 	EzLauncher.NewsDivider.BackgroundColor3 = Color3.fromRGB(18, 98, 159)
 	EzLauncher.NewsDivider.LayoutOrder = 1
 	EzLauncher.NewsDivider.Size = UDim2.new(1, -10, 0, 3)
 	EzLauncher.NewsDivider.Visible = false
- 
+
 	EzLauncher.UICorner_10.Parent = EzLauncher.NewsDivider
- 
+
 	EzLauncher.NewsLabel.Name = "NewsLabel"
 	EzLauncher.NewsLabel.Parent = EzLauncher.Containers
 	EzLauncher.NewsLabel.BackgroundColor3 = Color3.fromRGB(28, 41, 56)
@@ -854,33 +550,33 @@ ezhub.MouseButton1Down:connect(function()
 	EzLauncher.NewsLabel.TextSize = 14.000
 	EzLauncher.NewsLabel.TextWrapped = true
 	EzLauncher.NewsLabel.TextXAlignment = Enum.TextXAlignment.Left
- 
+
 	EzLauncher.UIPadding_2.Parent = EzLauncher.NewsLabel
 	EzLauncher.UIPadding_2.PaddingBottom = UDim.new(0, 5)
 	EzLauncher.UIPadding_2.PaddingLeft = UDim.new(0, 5)
 	EzLauncher.UIPadding_2.PaddingRight = UDim.new(0, 5)
 	EzLauncher.UIPadding_2.PaddingTop = UDim.new(0, 5)
- 
+
 	--------------------------------------------------------------------
 	-- Gui to lua manual properties
- 
+
 	EzLauncher.Containers.NewsLabel.AutomaticSize = Enum.AutomaticSize.Y;
 	EzLauncher.NewsSection.ContentFrame.AutomaticCanvasSize = Enum.AutomaticSize.Y;
 	EzLauncher.NewsSection.ContentFrame.ScrollBarImageColor3 = Color3.fromRGB(112, 112, 112);
- 
+
 	--------------------------------------------------------------------
 	-- Get launcher data
- 
+
 	EzLauncher.EzLauncher.Enabled = false;
- 
+
 	local launcherData = game:GetService("HttpService"):JSONDecode(
 	(game:HttpGet("https://raw.githubusercontent.com/debug420/Ez-Industries-Launcher-Data/master/LauncherData.json")));
- 
+
 	EzLauncher.EzLauncher.Enabled = true;
- 
+
 	--------------------------------------------------------------------
 	-- Startup animation
- 
+
 	-- Essentially changes the visibillity of the descendants of the main frame of the launcher
 	local function changeElementState(state)
 		for i,v in pairs(EzLauncher.EzLauncher.Frame:GetDescendants()) do
@@ -889,35 +585,35 @@ ezhub.MouseButton1Down:connect(function()
 			end
 		end
 	end
- 
+
 	changeElementState(false);
- 
+
 	local oldSize = EzLauncher.EzLauncher.Frame.Size;
 	EzLauncher.EzLauncher.Frame.Size = UDim2.new(0,0,0,0);
- 
+
 	EzLauncher.EzLauncher.Frame:TweenSize(oldSize, Enum.EasingDirection.Out,
 		Enum.EasingStyle.Quad, 0.3);
- 
+
 	wait(0.35);
- 
+
 	changeElementState(true);
- 
+
 	--------------------------------------------------------------------
 	-- Get all the launcher data necessary
- 
+
 	local newsData = launcherData["NewsData"];
 	local statusData = launcherData["StatusData"];
 	local latestVersion = launcherData["LatestVersion"];
 	local themes = launcherData["Themes"];
- 
+
 	--------------------------------------------------------------------
 	-- Apply the launcher data: News
- 
+
 	for i,v in pairs(newsData) do
- 
+
 		local newsOrder = v[1] * -1;	-- This is to make it sort in a different order
 		local newsText = v[2];
- 
+
 		if newsText == "@DIVIDER" then
 			local div = EzLauncher.NewsDivider:Clone();
 			div.LayoutOrder = newsOrder;
@@ -930,16 +626,16 @@ ezhub.MouseButton1Down:connect(function()
 			container.Parent = EzLauncher.NewsSection.ContentFrame;
 			container.Visible = true;
 		end
- 
+
 	end
- 
+
 	--------------------------------------------------------------------
 	-- Apply the launcher data: Status
- 
+
 	EzLauncher.EzHubStatusFrame.Status.Text = statusData["EzHub"];
 	EzLauncher.EzAPIStatusFrame.Status.Text = statusData["EzAPI"];
 	EzLauncher.EzLauncherStatusFrame.Status.Text = statusData["EzLauncher"];
- 
+
 	if EzLauncher.EzHubStatusFrame.Status.Text == "Offline" then
 		EzLauncher.EzHubStatusFrame.Status.TextColor3 = Color3.fromRGB(192, 49, 52)
 	end
@@ -949,10 +645,10 @@ ezhub.MouseButton1Down:connect(function()
 	if EzLauncher.EzLauncherStatusFrame.Status.Text == "Offline" then
 		EzLauncher.EzLauncherStatusFrame.Status.TextColor3 = Color3.fromRGB(192, 49, 52)
 	end
- 
+
 	--------------------------------------------------------------------
 	-- Apply the launcher data: Themes
- 
+
 	local selectedTheme = "Default";
 	local currentThemeIndex = themes[selectedTheme]["ThemeIndex"];
 	local highestThemeIndex = (function()
@@ -962,18 +658,18 @@ ezhub.MouseButton1Down:connect(function()
 		end
 		return highest;
 	end)();
- 
+
 	local function getThemeWithThemeIndex(themeIndex)
 		for i,v in pairs(themes) do
 			if v["ThemeIndex"] == themeIndex then return i; end
 		end
 	end
- 
+
 	local function updateSelectedTheme()
 		selectedTheme = getThemeWithThemeIndex(currentThemeIndex);
 		EzLauncher.SelectedLabel.Text = selectedTheme;
 	end
- 
+
 	EzLauncher.SelectionRight.MouseButton1Click:Connect(function()
 		if currentThemeIndex == highestThemeIndex then
 			currentThemeIndex = 1;
@@ -982,7 +678,7 @@ ezhub.MouseButton1Down:connect(function()
 		end
 		updateSelectedTheme();
 	end)
- 
+
 	EzLauncher.SelectionLeft.MouseButton1Click:Connect(function()
 		if currentThemeIndex == 1 then
 			currentThemeIndex = highestThemeIndex;
@@ -991,10 +687,10 @@ ezhub.MouseButton1Down:connect(function()
 		end
 		updateSelectedTheme();
 	end)
- 
+
 	--------------------------------------------------------------------
 	-- Apply the launcher data: latest version
- 
+
 	-- List of accouonts that can launch Ez Hub regardless of the status
 	-- Note that the status is just to prevent users from executing Ez Hub when it is in testing/broken stages
 	-- Therefore there is no need for any type of secure whitelist
@@ -1012,9 +708,9 @@ ezhub.MouseButton1Down:connect(function()
 		382498,
 		1606794809
 	}
- 
+
 	EzLauncher.Launch.MouseButton1Click:Connect(function()
- 
+
 		-- Check if services are down
 		if not table.find(allowedOverrideUsers, game.Players.LocalPlayer.UserId) and (EzLauncher.EzHubStatusFrame.Status.Text == "Offline" or
 			EzLauncher.EzAPIStatusFrame.Status.Text == "Offline" or
@@ -1026,44 +722,44 @@ ezhub.MouseButton1Down:connect(function()
 			end)
 			return;
 		end
- 
+
 		EzLauncher.Launch.Text = "Launching...";
- 
+
 		-- Apply the theme before launching Ez Hub
 		_G.EzHubTheme = themes[selectedTheme];
 		loadstring(game:HttpGet(latestVersion))();
- 
+
 		changeElementState(false)
- 
+
 		EzLauncher.EzLauncher.Frame:TweenSize(UDim2.new(0,0,0,0), Enum.EasingDirection.Out,
 			Enum.EasingStyle.Quad, 0.5, false, function()
 				EzLauncher.EzLauncher:Destroy();
 			end);
- 
+
 	end)
- 
+
 	--------------------------------------------------------------------
 	-- Dragify
- 
+
 	local function dragify(MainFrame)
- 
+
 		local dragging;
 		local dragInput;
 		local dragStart;
 		local startPos;
- 
+
 		local function update(input)
 			local Delta = input.Position - dragStart;
 			local Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + Delta.X, startPos.Y.Scale, startPos.Y.Offset + Delta.Y);
 			game:GetService("TweenService"):Create(MainFrame, TweenInfo.new(.15), {Position = Position}):Play();
 		end
- 
+
 		MainFrame.InputBegan:Connect(function(input)
 			if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
 				dragging = true;
 				dragStart = input.Position;
 				startPos = MainFrame.Position;
- 
+
 				input.Changed:Connect(function()
 					if input.UserInputState == Enum.UserInputState.End then
 						dragging = false;
@@ -1071,26 +767,30 @@ ezhub.MouseButton1Down:connect(function()
 				end)
 			end
 		end)
- 
+
 		MainFrame.InputChanged:Connect(function(input)
 			if (input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch) then
 				dragInput = input;
 			end
 		end)
- 
+
 		game:GetService("UserInputService").InputChanged:Connect(function(input)
 			if input == dragInput and dragging then
 				update(input);
 			end
 		end)
 	end
- 
+
 	dragify(EzLauncher.EzLauncher.Frame);
 end)
- 
- 
- 
- 
- 
- 
- 
+
+infiniteyield.MouseButton1Down:connect(function()
+	loadstring(game:HttpGet(('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'),true))()
+end)
+
+
+
+
+
+
+
