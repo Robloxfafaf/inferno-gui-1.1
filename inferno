@@ -1,7 +1,9 @@
 local player=game.Players.LocalPlayer
 local haxgui = Instance.new("ScreenGui")
 local loginframe = Instance.new("Frame")
+local frame = Instance.new("Frame")
 local Button = Instance.new("TextButton")
+local Button1 = Instance.new("TextButton")
 local Speed1 = Instance.new("TextButton")
 local UICorner_1 = Instance.new("UICorner")
 local UICorner_2 = Instance.new("UICorner")
@@ -10,17 +12,31 @@ local UICorner_4 = Instance.new("UICorner")
 local UICorner_5 = Instance.new("UICorner")
 local UICorner_6 = Instance.new("UICorner")
 local UICorner_7 = Instance.new("UICorner")
+local UICorner_8 = Instance.new("UICorner")
+local UICorner_9 = Instance.new("UICorner")
+local UICorner_10 = Instance.new("UICorner")
+local UICorner_11 = Instance.new("UICorner")
+local UICorner_12 = Instance.new("UICorner")
 local Speed2 = Instance.new("TextButton")
 local Speed3 = Instance.new("TextButton")
 local PrisonLife = Instance.new("TextButton")
 local troll = Instance.new("TextButton")
 local ezhub = Instance.new("TextButton")
-local name = Instance.new("TextBox")
+local name = Instance.new("TextLabel")
+local open = Instance.new("TextButton")
+local open1 = Instance.new("TextButton")
+local page2 = Instance.new("TextButton")
+local page1 = Instance.new("TextButton")
+local panic = Instance.new("TextButton")
 local infiniteyield = Instance.new("TextButton")
+local idk = Instance.new("Frame")
 
 loginframe.Draggable = true
 loginframe.Selectable = true
 loginframe.Active = true
+frame.Draggable = true
+frame.Selectable = true
+frame.Active = true
 
 haxgui.Name = "haxgui"
 haxgui.Parent = player.PlayerGui
@@ -34,6 +50,23 @@ loginframe.Size = UDim2.new(0, 392, 0, 243)
 
 UICorner_1.Parent = loginframe
 
+frame.Name = "frame"
+frame.Parent = haxgui
+frame.BorderSizePixel = 0
+frame.BackgroundColor3 = Color3.new(0.223529, 0.223529, 0.223529)
+frame.Position = UDim2.new(0.054, 0, 0.074, 0)
+frame.Size = UDim2.new(0, 392, 0, 243)
+frame.Visible = false
+
+UICorner_9.Parent = frame
+
+idk.Name = "idk"
+idk.Parent = loginframe
+idk.BorderSizePixel = 0
+idk.Position = UDim2.new(0.089, 0,0.901, 0)
+idk.BackgroundColor3 = Color3.new(0, 0, 0)
+idk.Size = UDim2.new(0, 268 ,0, 23)
+
 Button.Name = "button"
 Button.Parent = loginframe
 Button.Position = UDim2.new(0.918, 0, 0)
@@ -43,7 +76,65 @@ Button.BackgroundTransparency = 1
 Button.Text = "X"
 Button.TextSize = 14
 Button.MouseButton1Down:connect(function()
-	haxgui:remove()
+	loginframe:TweenPosition(UDim2.new(-5, 0, 0, 0) , "InOut", "Sine", 1, true)
+	wait(1)
+	loginframe.Visible = false
+	wait(.1)
+	open.Visible = true 
+	open:TweenPosition(UDim2.new(0, 0,0, 765), "Out", "Sine",1 ,true)
+end)
+
+Button1.Name = "button1"
+Button1.Parent = frame
+Button1.Position = UDim2.new(0.918, 0, 0)
+Button1.Size = UDim2.new(0, 32, 0, 35)
+Button1.TextColor3 = Color3.new(1, 0, 0)
+Button1.BackgroundTransparency = 1
+Button1.Text = "X"
+Button1.TextSize = 14
+Button1.MouseButton1Down:connect(function()
+	frame:TweenPosition(UDim2.new(-5, 0, 0, 0) , "InOut", "Sine", 1, true)
+	wait(1)
+	frame.Visible = false
+	wait(.1)
+	open1.Visible = true 
+	open1:TweenPosition(UDim2.new(0, 0,0, 765), "Out", "Sine",1 ,true)
+end)
+
+open.Name = "Open"
+open.Parent = haxgui
+open.BorderSizePixel = 0
+open.BackgroundColor3 = Color3.new(0.223529, 0.223529, 0.223529)
+open.Position = UDim2.new(-1, 0,0, 765)
+open.Size = UDim2.new(0, 50,0, 50)
+open.TextWrapped = true
+open.Text = "Open"
+open.TextSize = 14
+open.TextColor3 = Color3.new(1, 1, 1)
+open.Visible = false
+open.MouseButton1Down:connect(function()
+	loginframe.Visible = true
+	loginframe:TweenPosition(UDim2.new(0.054, 0, 0.074, 0), "InOut", "Sine",1 ,true)
+	open.Visible = false
+	open.Position = UDim2.new(-1, 0,0, 765)
+end)
+
+open1.Name = "Open"
+open1.Parent = haxgui
+open1.BorderSizePixel = 0
+open1.BackgroundColor3 = Color3.new(0.223529, 0.223529, 0.223529)
+open1.Position = UDim2.new(-1, 0,0, 765)
+open1.Size = UDim2.new(0, 50,0, 50)
+open1.TextWrapped = true
+open1.Text = "Open"
+open1.TextSize = 14
+open1.TextColor3 = Color3.new(1, 1, 1)
+open1.Visible = false
+open1.MouseButton1Down:connect(function()
+	frame.Visible = true
+	frame:TweenPosition(UDim2.new(0.054, 0, 0.074, 0), "InOut", "Sine",1 ,true)
+	open1.Visible = false
+	open1.Position = UDim2.new(-1, 0,0, 765)
 end)
 
 Speed1.Name = "speed1"
@@ -90,17 +181,6 @@ PrisonLife.Text="Prison Life"
 
 UICorner_5.Parent = PrisonLife
 
-infiniteyield.Name = "Infinite Yield"
-infiniteyield.Parent = loginframe
-infiniteyield.BorderSizePixel = 1
-infiniteyield.BackgroundColor3 = Color3.new(0.333333, 0.666667, 0)
-infiniteyield.Position = UDim2.new(0.365, 0, 0.247, 0)
-infiniteyield.Size = UDim2.new(0, 49, 0, 35)
-infiniteyield.TextWrapped = true
-infiniteyield.Text = "Infinite Yield"
-
-
-
 ezhub.Name = "Prison Life"
 ezhub.Parent = loginframe
 ezhub.BorderSizePixel = 1
@@ -112,6 +192,17 @@ ezhub.Text= "ezhub"
 
 UICorner_7.Parent = ezhub
 
+infiniteyield.Name ="Infinite yield"
+infiniteyield.Parent = loginframe
+infiniteyield.BorderSizePixel = 0
+infiniteyield.BackgroundColor3 = Color3.new(0.333333, 0.666667, 0)
+infiniteyield.Position = UDim2.new(0.365, 0, 0.251, 0)
+infiniteyield.Size = UDim2.new(0, 49, 0, 35)
+infiniteyield.TextWrapped = true
+infiniteyield.Text = "Infinite yield"
+
+UICorner_12.Parent = infiniteyield
+
 name.Name = "name"
 name.Parent = loginframe
 name.BackgroundTransparency = 1
@@ -122,6 +213,56 @@ name.TextWrapped = true
 name.Text = "Inferno's gui"
 name.Rotation = 270
 name.TextSize = 20
+
+page1.Name = "page2"
+page1.Parent = frame
+page1.BorderSizePixel = 1
+page1.BackgroundColor3 = Color3.new(0.333333, 0.666667, 0)
+page1.Position = UDim2.new(-0.002, 0, 0.901, 0)
+page1.Size = UDim2.new(0, 36,0, 23)
+page1.TextWrapped = true
+page1.TextSize = 14
+page1.Text = "<"
+
+page1.MouseButton1Down:connect(function()
+	loginframe.Visible = true
+	frame.Visible = false
+end)
+
+UICorner_10.Parent = page1
+
+page2.Name = "page2"
+page2.Parent = loginframe
+page2.BorderSizePixel = 1
+page2.BackgroundColor3 = Color3.new(0.333333, 0.666667, 0)
+page2.Position = UDim2.new(0.906, 0, 00.901, 0)
+page2.Size = UDim2.new(0, 36,0, 23)
+page2.TextWrapped = true
+page2.TextSize = 14
+page2.Text = ">"
+
+page2.MouseButton1Down:connect(function()
+	loginframe.Visible = false
+	frame.Visible = true
+end)
+
+UICorner_8.Parent = page2
+
+panic.Name = "Panic"
+panic.Parent = loginframe
+panic.BorderSizePixel = 0
+panic.BackgroundColor3 = Color3.new(0.333333, 0.666667, 0)
+panic.Position = UDim2.new(0.686, 0, 0.901, 0)
+panic.Size = UDim2.new(0, 61, 0, 23)
+panic.TextWrapped = true
+panic.TextColor3 = Color3.new(1, 0, 0)
+panic.Text = "Panic"
+panic.TextSize = 14
+panic.MouseButton1Down:connect(function()
+	haxgui:remove()
+end)
+
+UICorner_11.Parent = panic
 
 Speed1.MouseButton1Down:connect(function()
 	game.Players.LocalPlayer.Character:findFirstChildOfClass("Humanoid").WalkSpeed = 16
