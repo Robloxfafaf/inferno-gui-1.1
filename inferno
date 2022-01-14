@@ -29,7 +29,6 @@ local page2 = Instance.new("TextButton")
 local page1 = Instance.new("TextButton")
 local panic = Instance.new("TextButton")
 local infiniteyield = Instance.new("TextButton")
-local idk = Instance.new("Frame")
 
 loginframe.Draggable = true
 loginframe.Selectable = true
@@ -59,13 +58,6 @@ frame.Size = UDim2.new(0, 392, 0, 243)
 frame.Visible = false
 
 UICorner_9.Parent = frame
-
-idk.Name = "idk"
-idk.Parent = loginframe
-idk.BorderSizePixel = 0
-idk.Position = UDim2.new(0.089, 0,0.901, 0)
-idk.BackgroundColor3 = Color3.new(0, 0, 0)
-idk.Size = UDim2.new(0, 268 ,0, 23)
 
 Button.Name = "button"
 Button.Parent = loginframe
